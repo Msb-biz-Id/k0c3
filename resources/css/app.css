@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* Slate Canvas Colors (Tactile Sports Luxury) */
+    --color-slate-950: #07090e;      /* Canvas Background */
+    --color-slate-900: #0d121d;      /* Elevated Card Background */
+    --color-slate-850: #131b2e;      /* Interactive Container */
+    --color-slate-800: #1b2640;      /* Border Subtle */
+    --color-slate-700: #29385c;      /* Border Focus */
+
+    /* Dynamic Accent Injection (Default: Volt Lime) */
+    --app-accent: #a3e635;
+    --app-accent-hover: #84cc16;
+    --app-accent-glow: rgba(163, 230, 53, 0.18);
+    --app-primary: var(--app-accent);
+
+    /* Dynamic Typography Engine (Default: Athletic Broadcast) */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Preset A: Athletic Broadcast (Default) */
+[data-typography="athletic_broadcast"],
+[data-typography="preset_a"] {
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Preset B: Clean Tech Minimal */
+[data-typography="clean_tech"],
+[data-typography="preset_b"] {
+    --font-heading: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Preset C: Classic Championship */
+[data-typography="classic_championship"],
+[data-typography="preset_c"] {
+    --font-heading: 'DM Sans', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'Fira Code', monospace;
+}
+
+/* Font Assignments */
+h1, h2, h3, h4, h5, h6, .font-heading, .font-display {
+    font-family: var(--font-heading);
+}
+
+body, .font-body, .font-sans {
+    font-family: var(--font-body);
+}
+
+code, kbd, samp, pre, .font-mono {
+    font-family: var(--font-mono);
+}
+
+/* Beacon Keyframes */
+@keyframes court-beacon {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 var(--app-accent-glow); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(163, 230, 53, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(163, 230, 53, 0); }
+}
+
